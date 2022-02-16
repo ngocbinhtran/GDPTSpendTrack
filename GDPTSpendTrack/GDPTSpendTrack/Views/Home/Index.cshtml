@@ -7,19 +7,28 @@
     <p class="lead">Tracking incomes and expenses for GDPT Truc Lam</p>
 </div>
 
-<div>
-    <label>Transaction Date: </label>
-    <input type="text" id="txtTransactionDate"/>
-</div>
-<div>
-    <label>Description: </label>
-    <input type="text" id="txtDescription" />
-</div>
-<div>
-    <label>Amount: </label>
-    <input type="number" id="numAmount"/>
-</div>
-<div>
-    <label>Notes: </label>
-    <input type="text" id="txtNotes"/>
-</div>
+<div><label>Total Donation:  </label><text>1</text></div>
+<div><label>Total Expense:   </label><text>1</text></div>
+<div><label>Current balance: </label><text>0</text></div>
+
+<h3>Donation</h3>
+<table id="tblDonation" data-url="@Url.Action("GetTransactions")">
+    <thead>
+    <tr>
+        <th data-options="data:Date" style="padding-right: 60px">Date</th>
+        <th data-options="data:Description" style="padding-right: 100px">Description</th>
+        <th data-options="data:Amount" style="padding-right: 50px">Amount</th>
+        <th data-options="data:Notes" style="padding-right: 50px">Notes</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+<script>
+    $(document).ready(function() {
+        $(function() {
+            $("#tblDonation").DataTable();
+        });
+    });
+</script>
